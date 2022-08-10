@@ -84,7 +84,7 @@ public class TapController : MonoBehaviour {
 			scoreAudio.Play();
 		}
 
-		if (col.gameObject.tag == "DeadZones") {
+		if (col.gameObject.tag == "DeadZone") {
 		
 			rigid.simulated = false;
 			OnPlayerDied ();
