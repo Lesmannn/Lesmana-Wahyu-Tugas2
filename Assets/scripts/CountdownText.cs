@@ -22,13 +22,15 @@ public class CountdownText : MonoBehaviour {
 
 	IEnumerator Countdown(){
 		int count = 3;
-		for (int i = 0; i < count; i++) {
-			countdown.text = (count - i).ToString();
+		for (int i = 0; i < 3; i++) {
+			countdown.text = (3 - i).ToString();
 			yield return new WaitForSeconds (1);
-		
-		
+			count -= 1;
 		}
-	
-		OnCountdownFinished ();
+		if (count <= 0)
+        {
+			OnCountdownFinished?.Invoke();
+        }
+		
 	}
 }
