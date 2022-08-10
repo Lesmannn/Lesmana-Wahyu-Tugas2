@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
 	int score = 0;
 	bool gameOver = true;
 
-	public bool GameOver { get { return !gameOver; } }
+	public bool GameOver { get { return gameOver; } }
 
 	void Awake(){
 	
@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour {
 	void OnEnable(){
 		TapController.OnPlayerDied += OnPlayerDied;
 		TapController.OnPlayerScored += OnPlayerScored;
+		CountdownText.OnCountdownFinished += OnCountdownFinished;
 	
 	}
 
