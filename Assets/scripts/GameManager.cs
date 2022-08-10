@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
 	int score = 0;
 	bool gameOver = true;
 
-	public bool GameOver { get { return !gameOver; } }
+	public bool GameOver { get { return gameOver; } }
 
 	void Awake(){
 	
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour {
 		SetPageState (PageState.None);
 		OnGameStarted ();
 		score = 0;
-		//gameOver = false;
+		gameOver = false;
 	
 	}
 
