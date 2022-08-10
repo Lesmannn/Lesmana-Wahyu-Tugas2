@@ -63,10 +63,11 @@ public class TapController : MonoBehaviour {
 			
 		if(Input.GetMouseButtonDown(0))
 			{
+			rigid.simulated = true;
 			tapAudio.Play ();
 			transform.rotation = forwardrotation;
 			rigid.velocity = Vector3.zero;
-			rigid.AddForce (Vector2.down * tapForce, ForceMode2D.Force);
+			rigid.AddForce (Vector2.up * tapForce, ForceMode2D.Force);
 
 			}
 
