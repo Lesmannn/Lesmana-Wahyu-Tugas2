@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject gameOverPage;
 	public GameObject countdownPage;
 	public Text scoreText;
-	[SerializeField] int _score;
+	
 
 	enum PageState{
 		None,
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour {
 	void OnPlayerDied(){
 		gameOver = true;
 		int savedScore = PlayerPrefs.GetInt ("highscore");
-		if (score < savedScore) {
+		if (score > savedScore) {
 			PlayerPrefs.SetInt ("highscore", score);
 		
 		}
@@ -67,8 +67,8 @@ public class GameManager : MonoBehaviour {
 
 	void OnPlayerScored(){
 	
-		_score++;
-		scoreText.text = _score.ToString();
+		score++;
+		scoreText.text = score.ToString();
 	}
 
 	void SetPageState(PageState state){
